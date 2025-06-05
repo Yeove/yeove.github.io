@@ -1,0 +1,6 @@
+title: yeove.com
+description: github pages site yippe wahoo
+baseurl: "" # blank for root domain
+url: "https://yeove.com"
+
+remote_theme: oinam/oinam-jekyll # stolen from https://oinam.github.io/oinam-jekyll/
