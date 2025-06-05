@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+  html {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+  }
+</style>
   <meta charset="UTF-8">
   <title>Yeove.com</title>
   <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" type="text/css">
@@ -8,5 +15,11 @@
 <body>
   <a href="https://shop.yeove.com/">Shop</a> · <a href="https://www.youtube.com/@Yeove">YouTube</a> · <a href="https://github.com/Yeove">Github</a>  · <a href="https://www.discord.com/invite/brbbXX2">Discord</a>   · <a href="https://www.redbubble.com/people/Yeove/shop">Merch</a> 
   <h1>Omg hello</h1>
+<script>
+  window.addEventListener('load', () => {
+    document.documentElement.style.visibility = 'visible';
+    document.documentElement.style.opacity = '1';
+  });
+</script>
 </body>
 </html>
