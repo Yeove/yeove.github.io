@@ -3,12 +3,90 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Yeove.com</title>
+  <title>Yeove | Technical Animator | Contact Information</title>
   <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" type="text/css"> 
+  <link rel="icon" type="image/png" href="assets/Yeove_Logo_NoPadding_Clear.png">
 
-<!-- This one also looks really good: https://dohliam.github.io/dropin-minimal-css/ https://unpkg.com/sakura.css/css/sakura.css -->
 
-  <style>
+<!-- Sakura Dark CSS Theme: https://dohliam.github.io/dropin-minimal-css/ https://unpkg.com/sakura.css/css/sakura-dark.css -->
+<!-- Sakura Light CSS Theme: https://dohliam.github.io/dropin-minimal-css/ https://unpkg.com/sakura.css/css/sakura.css -->
+
+      <style>
+    /* --- Bio & Button Spacing --- */
+    .hero__bio {
+      max-width: 600px;
+      line-height: 1.6;
+      opacity: 0.8;
+      margin-top: 1rem;
+      margin-bottom: 1.8rem;
+    }
+
+        /* --- Professional Header Styling --- */
+    .hero {
+      margin-bottom: 3rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(0,0,0,0.05); /* subtle separator thing */
+    }
+
+    .hero__name {
+      margin-bottom: 0.1rem;
+      font-size: 2.5rem;
+      font-weight: 800;
+    }
+
+    .hero__title {
+      margin-top: 0;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--card-bg, #555); /* slightly different color than name */
+      opacity: 0.9;
+    }
+
+    .hero__bio {
+      max-width: 600px;
+      line-height: 1.6;
+      opacity: 0.8;
+      /* color: var(--card-bg, #555); */
+      margin-bottom: 1.5rem;
+    }
+
+        /* --- Rounded Contact Button (Matching Card Style) --- */
+        .btn-contact {
+      display: inline-block;
+      padding: 15px 24px;
+      background: #3a435f;
+      color: #ffffff !important;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 1.5rem;
+      /* Added 'color' to the transition list below */
+      transition: transform .12s ease, background .12s ease, box-shadow .12s ease, color .12s ease;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .btn-contact:hover {
+      background: #ffffff;
+      color: #000000 !important; /* This makes the text fade to black */
+      transform: translateY(-0px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    /* Dark mode adjustment for button */
+    @media (prefers-color-scheme: dark) {
+      .btn-contact {
+        background: #eee;
+        color: #982c61 !important;
+      }
+      .btn-contact:hover {
+        background: #fff;
+        color: #000000 !important; /* Ensures black text on white background in dark mode too */
+      }
+    }
+
+
+    /* Old CSS Styles that work /
+    
     /* professional looking page fade-in whamp whamp */
     html {
       visibility: hidden;
@@ -62,7 +140,7 @@
       line-height: 1.35;
     }
 
-    /* Optional: dark mode stuff */
+    /* Optional: dark mode , hyperlinked names still have a weird colour while using this, so I have to figure out how to fix that somehow */
     @media (prefers-color-scheme: dark) {
       :root { --card-bg: #161616; }
       .card { border-color: rgba(255,255,255,.12); }
@@ -83,17 +161,22 @@
   </style>
 </head>
 <body>
-  <header>
-    <h1 style="margin-bottom: .25rem;">Omg hello</h1>
-    <p style="margin-top: 0; opacity:.8;">Links to my stuff</p>
-  </header>
-
+  <header class="hero">
+  <div class="hero__content">
+    <h1 class="hero__name">Yeove</h1>
+    <p class="hero__title">Technical Animator </p>
+    <p class="hero__bio">
+      Animator & Rigger, using Blender, & mocap pipelines.
+    </p>
+    <a href="mailto:yeove_@outlook.com" class="btn-contact"> Contact</a>
+  </div>
+</header>
   <section class="gallery">
     <a class="card" href="https://mocap-fusion-wiki.notion.site">
       <img class="card__thumb" src="assets/wiki_icon2.png" alt="Mocap Fusion Wiki" />
       <div class="card__body">
         <h3 class="card__title">Mocap Fusion Wiki</h3>
-        <p class="card__desc">Wiki for motion capture stuff.</p>
+        <p class="card__desc">Wiki for motion capture workflows & hardware pairing.</p>
       </div>
     </a>
 
@@ -101,12 +184,12 @@
       <img class="card__thumb" src="assets/SteamVR_Shoe.gif" alt="Shop" />
       <div class="card__body">
         <h3 class="card__title">Shop</h3>
-        <p class="card__desc">3D-printed hardware and merch.</p>
+        <p class="card__desc">Ready to Ship 3D-printed hardware.</p>
       </div>
     </a>
 
     <a class="card" href="https://www.youtube.com/@Yeove">
-      <img class="card__thumb" src="assets/YouTube.webp" alt="YouTube" />
+      <img class="card__thumb" src="assets/MocappedWaitressDemo.webp" alt="YouTube" />
       <div class="card__body">
         <h3 class="card__title">YouTube</h3>
         <p class="card__desc">Animation, tech, and creative projects.</p>
@@ -136,8 +219,8 @@
         <p class="card__desc">Art & apparel on Redbubble.</p>
       </div>
     </a>
+    <p class="hero__title">© Yeove 2026</p>
   </section>
-
   <script>
     window.addEventListener('load', () => {
       const html = document.documentElement;
