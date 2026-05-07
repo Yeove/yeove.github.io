@@ -7,9 +7,21 @@
   <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" type="text/css"> 
   <link rel="icon" type="image/png" href="assets/Yeove_Logo_NoPadding_Clear.png">
 
+  <title>Yeove - Portfolio & Links</title>
+  <meta name="description" content="Personal portfolio and link hub for Yeove. Check out my YouTube, Shopify store, and Wiki.">
+
 
 <!-- Sakura Dark CSS Theme: https://dohliam.github.io/dropin-minimal-css/ https://unpkg.com/sakura.css/css/sakura-dark.css -->
 <!-- Sakura Light CSS Theme: https://dohliam.github.io/dropin-minimal-css/ https://unpkg.com/sakura.css/css/sakura.css -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-527518143"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-527518143');
+</script>
 
       <style>
     /* --- Bio & Button Spacing --- */
@@ -141,12 +153,13 @@
       line-height: 1.35;
     }
 
-    /* Optional: dark mode , hyperlinked names still have a weird colour while using this, so I have to figure out how to fix that somehow */
-    @media (prefers-color-scheme: dark) {
+    /* Optional: dark mode , hyperlinked names still have a weird colour while using this, so I have to figure out how to fix that */
+   /*@media (prefers-color-scheme: dark) {
       :root { --card-bg: #161616; }
       .card { border-color: rgba(255,255,255,.12); }
       .card:hover { border-color: rgba(255,255,255,.22); }
     }
+  */
 
     /* make card text match page scale */
     .card__title {
