@@ -1,196 +1,268 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Yeove - Portfolio & Links</title>
-  <meta name="description" content="Personal portfolio and link hub for Yeove. Check out my YouTube, Shopify store, and Wiki.">
-  <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" type="text/css"> 
-  <link rel="icon" type="image/png" href="assets/Yeove_Logo_NoPadding_Clear.png">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Yeove — Portfolio &amp; Links</title>
+<meta name="description" content="Personal portfolio and link hub for Yeove. Check out my YouTube, Shopify store, and Wiki.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" type="image/png" href="assets/Yeove_Logo_NoPadding_Clear.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-
-
-
-<!-- Sakura Dark CSS Theme: https://dohliam.github.io/dropin-minimal-css/ https://unpkg.com/sakura.css/css/sakura-dark.css -->
-<!-- Sakura Light CSS Theme: https://dohliam.github.io/dropin-minimal-css/ https://unpkg.com/sakura.css/css/sakura.css -->
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-527518143"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-527518143');
 </script>
 
-      <style>
-    /* --- Bio & Button Spacing --- */
-    .hero__bio {
-      max-width: 600px;
-      line-height: 1.6;
-      opacity: 0.8;
-      margin-top: 1rem;
-      margin-bottom: 1.8rem;
-    }
+<style>
+:root {
+  --sky-top:     #FCFDFE;
+  --sky-mid:     #EDF3F9;
+  --sky-bottom:  #D7E6F4;
 
-        /* --- Professional Header Styling --- */
-    .hero {
-      margin-bottom: 3rem;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid rgba(0,0,0,0.05); /* subtle separator thing */
-    }
+  --card:        #FFFFFF;
+  --thumb-bg:    #EDF3F9;
+  --rule:        #E3E9F0;
 
-    .hero__name {
-      margin-bottom: 0.1rem;
-      font-size: 2.5rem;
-      font-weight: 800;
-    }
+  --ink:         #2B3648;
+  --ink-soft:    #75879A;
+  --ink-faint:   #9AA9B8;
 
-    .hero__title {
-      margin-top: 0;
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: var(--card-bg, #555); /* slightly different color than name */
-      opacity: 0.9;
-    }
+  --blue:        #1B87EA;
+  --blue-hover:  #1272E0;
+  --blue-tint:   #DCEBFB;
+  --on-blue:     #FFFFFF;
 
-    .hero__bio {
-      max-width: 600px;
-      line-height: 1.6;
-      opacity: 0.8;
-      /* color: var(--card-bg, #555); */
-      margin-bottom: 1.5rem;
-    }
+  --shadow-card: 0 24px 54px rgba(45, 72, 110, .10), 0 4px 14px rgba(45, 72, 110, .05);
+  --shadow-lift: 0 32px 64px rgba(45, 72, 110, .16), 0 6px 18px rgba(45, 72, 110, .08);
+  --shadow-pop:  0 6px 16px rgba(45, 72, 110, .12);
 
-        /* --- Rounded Contact Button (Matching Card Style) --- */
-        .btn-contact {
-      display: inline-block;
-      padding: 15px 24px;
-      background: #3a435f;
-      color: #ffffff !important;
-      text-decoration: none;
-      border-radius: 10px;
-      font-weight: 600;
-      font-size: 1.5rem;
-      /* Added 'color' to the transition list below */
-      transition: transform .12s ease, background .12s ease, box-shadow .12s ease, color .12s ease;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    .btn-contact:hover {
-      /* background: #ffffff; */
-      background: #595f75;
-      /* background: #d3031c; */
-      color: #ffffff !important; /* This makes the text fade to black */
-      transform: translateY(2px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
+  --size-meta:   13px;
+  --size-body:   16px;
+  --size-head:   20px;
 
-    /* Dark mode adjustment for button */
-    @media (prefers-color-scheme: dark) {
-      .btn-contact {
-        background: #eee;
-        color: #982c61 !important;
-      }
-      .btn-contact:hover {
-        background: #fff;
-        color: #000000 !important; /* Ensures black text on white background in dark mode too */
-      }
-    }
+  --r-card:      28px;
+  --r-control:   10px;
 
+  --sans: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
 
-    /* Old CSS Styles that work /
-    
-    /* professional looking page fade-in whamp whamp */
-    html {
-      visibility: hidden;
-      opacity: 0;
-      transform: translateY(10px);
-      transition: opacity .6s ease, transform .6s ease;
-    }
+@media (prefers-color-scheme: dark) {
+  :root {
+    --sky-top:     #171A21;
+    --sky-mid:     #171A21;
+    --sky-bottom:  #1B1F28;
 
-    /* --- chicklet card view css (similar to a notion gallery view) --- */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 16px;
-      margin-top: 1.25rem;
-    }
-    .card {
-      display: block;               /* whole card is the link */
-      border: 1px solid rgba(0,0,0,.12);
-      border-radius: 10px;
-      overflow: hidden;
-      text-decoration: none;
-      background: var(--card-bg, #fff);
-      box-shadow: 0 1px 2px rgba(0,0,0,.06);
-      transition: transform .12s ease, box-shadow .12s ease; /* removed border-color transition */
-    will-change: transform; /* hint to the browser that only position changes */
-    }
-    .card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(0,0,0,.09);
-      border-color: rgba(0,0,0,.18);
-    }
-    .card__thumb {
-      aspect-ratio: 16 / 9;         /* better image ratio imo */
-      width: 100%;
-      object-fit: cover;
-      background: linear-gradient(135deg,#eee,#ddd); /* fallback bg */
-      display: block;
-    }
-    .card__body {
-      padding: 12px 14px;
-    }
-    .card__title {
-      margin: 0 0 .25rem 0;
-      font-size: 1.05rem;
-      line-height: 1.2;
-    }
-    .card__desc {
-      margin: 0;
-      font-size: .9rem;
-      opacity: .75;
-      line-height: 1.35;
-    }
+    --card:        #22262E;
+    --thumb-bg:    #2E3341;
+    --rule:        #333846;
 
-    /* Optional: dark mode , hyperlinked names still have a weird colour while using this, so I have to figure out how to fix that */
-   /*@media (prefers-color-scheme: dark) {
-      :root { --card-bg: #161616; }
-      .card { border-color: rgba(255,255,255,.12); }
-      .card:hover { border-color: rgba(255,255,255,.22); }
-    }
-  */
+    --ink:         #ECEEF3;
+    --ink-soft:    #A3ADBE;
+    --ink-faint:   #7F8898;
 
-    /* make card text match page scale */
-    .card__title {
-    font-size: 2rem;   /* was 1.05rem */
-    line-height: 1.3;
-    }
+    --blue:        #2E93F0;
+    --blue-hover:  #4AA3F5;
+    --blue-tint:   #26364A;
 
-    .card__desc {
-    font-size: 1.05rem;   /* was .9rem */
-    line-height: 1.45;
-    opacity: .85;         /* a bit darker for readability */
-    }
-  </style>
+    --shadow-card: 0 24px 54px rgba(0, 0, 0, .40), 0 4px 14px rgba(0, 0, 0, .30);
+    --shadow-lift: 0 32px 64px rgba(0, 0, 0, .52), 0 6px 18px rgba(0, 0, 0, .34);
+    --shadow-pop:  0 6px 16px rgba(0, 0, 0, .38);
+  }
+}
+
+* { box-sizing: border-box; }
+
+html {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity .5s ease, transform .5s ease;
+}
+html.ready { opacity: 1; transform: none; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: clamp(1.5rem, 5vw, 3.5rem) clamp(1rem, 5vw, 2rem) 4rem;
+  background: linear-gradient(180deg, var(--sky-top) 0%, var(--sky-mid) 42%, var(--sky-bottom) 100%);
+  background-attachment: fixed;
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: var(--size-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap { max-width: 880px; margin: 0 auto; }
+
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 48px;
+}
+.topbar__mark {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--card);
+  box-shadow: var(--shadow-pop);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+.topbar__mark img { width: 24px; height: 24px; display: block; }
+.topbar__label,
+.topbar__link {
+  font-size: var(--size-meta);
+  font-weight: 700;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.topbar__link { text-decoration: none; }
+.topbar__link:hover { color: var(--blue); }
+.topbar__rule { flex: 1; height: 1px; background: var(--rule); }
+
+.hero { margin-bottom: 56px; }
+h1 {
+  font-weight: 700;
+  font-size: clamp(2.4rem, 8vw, 3.6rem);
+  letter-spacing: -.02em;
+  line-height: 1.1;
+  margin: 0 0 6px;
+}
+.hero__role {
+  font-size: var(--size-head);
+  font-weight: 600;
+  color: var(--blue);
+  margin: 0 0 18px;
+}
+.hero__bio {
+  color: var(--ink-soft);
+  max-width: 46ch;
+  margin: 0 0 30px;
+}
+
+.btn {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: var(--size-body);
+  font-weight: 600;
+  color: var(--on-blue);
+  background: var(--blue);
+  border: none;
+  border-radius: var(--r-control);
+  padding: 15px 32px;
+  text-decoration: none;
+  box-shadow: 0 5px 14px rgba(27, 135, 234, .32);
+  transition: transform .12s ease, background .15s ease, box-shadow .15s ease;
+}
+.btn:hover {
+  background: var(--blue-hover);
+  box-shadow: 0 7px 18px rgba(27, 135, 234, .38);
+}
+.btn:active { transform: translateY(1px); }
+
+h2 {
+  font-weight: 700;
+  font-size: var(--size-head);
+  letter-spacing: -.01em;
+  margin: 0 0 22px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  display: block;
+  background: var(--card);
+  border-radius: var(--r-card);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lift);
+}
+.card:hover .card__title { color: var(--blue); }
+.card__thumb {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: var(--thumb-bg);
+}
+.card__body { padding: 18px 22px 22px; }
+.card__title {
+  font-size: var(--size-head);
+  font-weight: 700;
+  letter-spacing: -.01em;
+  margin: 0 0 4px;
+  transition: color .15s ease;
+}
+.card__desc {
+  font-size: var(--size-meta);
+  color: var(--ink-soft);
+  margin: 0;
+  line-height: 1.5;
+}
+
+:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+
+footer {
+  margin-top: 56px;
+  font-size: var(--size-meta);
+  color: var(--ink-faint);
+  text-align: center;
+}
+
+@media (max-width: 560px) {
+  .card { border-radius: 22px; }
+  .btn { display: block; text-align: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html, .card, .btn { transition: none; }
+}
+</style>
 </head>
 <body>
-  <header class="hero">
-  <div class="hero__content">
-    <h1 class="hero__name">Yeove</h1>
-    <p class="hero__title">Technical Animator </p>
-    <p class="hero__bio">
-      Interested in custom animations or character rigs? <br> Feel free to reach out below.
-    </p>
-    <a href="https://yeove.notion.site/12bc956d336a803db1e1fa33e89d9208?pvs=105" class="btn-contact"> Contact</a>
-  </div>
-</header>
+<div class="wrap">
+
+  <header class="topbar">
+    <span class="topbar__mark"><img src="assets/Yeove_Logo_NoPadding_Clear.png" alt="" /></span>
+    <span class="topbar__label">Yeove</span>
+    <span class="topbar__rule"></span>
+    <a class="topbar__link" href="https://yeove.notion.site/12bc956d336a803db1e1fa33e89d9208?pvs=105">Contact</a>
+  </header>
+
+  <section class="hero">
+    <h1>Yeove</h1>
+    <p class="hero__role">Technical Animator</p>
+    <p class="hero__bio">Interested in custom animations or character rigs?<br />Feel free to reach out below.</p>
+    <a class="btn" href="https://yeove.notion.site/12bc956d336a803db1e1fa33e89d9208?pvs=105">Get in touch &#8594;</a>
+  </section>
+
+  <h2>Where to find me</h2>
   <section class="gallery">
+
     <a class="card" href="https://mocap-fusion-wiki.notion.site">
       <img class="card__thumb" src="assets/wiki_icon2.png" alt="Mocap Fusion Wiki" />
       <div class="card__body">
         <h3 class="card__title">Mocap Fusion Wiki</h3>
-        <p class="card__desc">Wiki for motion capture workflows & hardware pairing.</p>
+        <p class="card__desc">Wiki for motion capture workflows &amp; hardware pairing.</p>
       </div>
     </a>
 
@@ -198,7 +270,7 @@
       <img class="card__thumb" src="assets/SteamVR_Shoe.gif" alt="Shop" />
       <div class="card__body">
         <h3 class="card__title">Shop</h3>
-        <p class="card__desc">Ready to Ship 3D-printed hardware.</p>
+        <p class="card__desc">Ready to ship 3D-printed hardware.</p>
       </div>
     </a>
 
@@ -214,7 +286,7 @@
       <img class="card__thumb" src="assets/Github.gif" alt="GitHub" />
       <div class="card__body">
         <h3 class="card__title">GitHub</h3>
-        <p class="card__desc">Open-source tools & experiments.</p>
+        <p class="card__desc">Open-source tools &amp; experiments.</p>
       </div>
     </a>
 
@@ -222,7 +294,7 @@
       <img class="card__thumb" src="assets/Discord.gif" alt="Discord" />
       <div class="card__body">
         <h3 class="card__title">Discord</h3>
-        <p class="card__desc">Join the community!</p>
+        <p class="card__desc">Join the community.</p>
       </div>
     </a>
 
@@ -230,18 +302,17 @@
       <img class="card__thumb" src="assets/Redbubble.png" alt="Merch" />
       <div class="card__body">
         <h3 class="card__title">Merch</h3>
-        <p class="card__desc">Art & apparel on Redbubble.</p>
+        <p class="card__desc">Art &amp; apparel on Redbubble.</p>
       </div>
     </a>
-    <p class="hero__title">© Yeove 2026</p>
+
   </section>
-  <script>
-    window.addEventListener('load', () => {
-      const html = document.documentElement;
-      html.style.visibility = 'visible';
-      html.style.opacity = '1';
-      html.style.transform = 'translateY(0)';
-    });
-  </script>
+
+  <footer>© Yeove 2026</footer>
+</div>
+
+<script>
+document.documentElement.classList.add('ready');
+</script>
 </body>
 </html>
